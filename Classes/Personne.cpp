@@ -3,3 +3,35 @@
 //
 
 #include "Personne.h"
+
+int Personne::getId() const {
+    return id;
+}
+
+void Personne::setId(int id) {
+    Personne::id = id;
+}
+
+const string &Personne::getNom() const {
+    return Nom;
+}
+
+void Personne::setNom(const string &nom) {
+    Nom = nom;
+}
+
+const string &Personne::getPrenom() const {
+    return Prenom;
+}
+
+void Personne::setPrenom(const string &prenom) {
+    Prenom = prenom;
+}
+
+const string &Personne::getMail() const {
+    return mail;
+}
+
+void Personne::setMail(const string &mail) {
+    Personne::mail = mail;
+}
