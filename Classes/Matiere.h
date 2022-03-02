@@ -19,7 +19,7 @@ public:
 public:
     Matiere(const string &idMat, const string &nomMat, float coef, const Enseignant &ens);
 
-    void AjouterMatiere();
+    void AjouterMatiere(vector<Enseignant> LL);
 
     Matiere();
 
