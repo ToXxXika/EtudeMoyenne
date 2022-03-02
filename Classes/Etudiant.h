@@ -11,6 +11,7 @@ protected:
 public:
     Etudiant(int id, const string &nom, const string &prenom, const string &mail, int numInsc);
 
+    void AjouterEtudiant();
     Etudiant();
 };
 #endif //ETUDEMOYENNE_ETUDIANT_H

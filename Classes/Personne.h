@@ -4,7 +4,7 @@
 
 #ifndef ETUDEMOYENNE_PERSONNE_H
 #define ETUDEMOYENNE_PERSONNE_H
-#include "string";
+#include "string"
 using namespace std;
 class  Personne {
 
