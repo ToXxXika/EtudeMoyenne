@@ -8,10 +8,19 @@
 using namespace std;
 class  Personne {
 
+public:
+    Personne();
+
+public:
+    Personne(int id, const string &nom, const string &prenom, const string &mail);
+
+protected:
     int id ;
     string Nom ;
     string Prenom;
     string mail ;
+
+
 public:
     int getId() const;
 
@@ -28,6 +37,7 @@ public:
     const string &getMail() const;
 
     void setMail(const string &mail);
+
 };
 
 

@@ -9,5 +9,11 @@
 
 class Enseignant: public Personne{
 
+    int CNSS ;
+public:
+    Enseignant(int id, const string &nom, const string &prenom, const string &mail, int cnss);
+
+    Enseignant();
+    void AjouterEnseignant();
 };
 #endif //ETUDEMOYENNE_ENSEIGNANT_H

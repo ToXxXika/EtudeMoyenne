@@ -7,7 +7,8 @@
 
 #include "string";
 #include "Personne.h"
-
+#include "Enseignant.h"
+#include "iostream"
 using namespace std;
 
 class Matiere  {
@@ -15,6 +16,12 @@ class Matiere  {
   string NomMat;
   float Coef ;
   Enseignant Ens;
+public:
+    Matiere(const string &idMat, const string &nomMat, float coef, const Enseignant &ens);
+
+    Matiere();
+    void AjouterMatiere();
+    friend ostream& operator<<(ostream& out ,const Matiere& Mat);
 
 };
 

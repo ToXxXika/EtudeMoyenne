@@ -6,8 +6,11 @@
 #define ETUDEMOYENNE_ETUDIANT_H
 #include "Personne.h"
 class Etudiant: public Personne{
+protected:
+    int Num_insc ;
 public:
-    Etudiant();
+    Etudiant(int id, const string &nom, const string &prenom, const string &mail, int numInsc);
 
+    Etudiant();
 };
 #endif //ETUDEMOYENNE_ETUDIANT_H

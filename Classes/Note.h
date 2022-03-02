@@ -6,8 +6,19 @@
 #define ETUDEMOYENNE_NOTE_H
 
 
+#include "Matiere.h"
+#include "Etudiant.h"
+#include "string"
+using namespace std ;
 class Note {
+     Matiere Mat ;
+     Etudiant Etu ;
+     float note ;
+     string Type ;
+public:
+    Note(const Matiere &mat, const Etudiant &etu, float note, const string &type);
 
+    Note();
 };
 
 

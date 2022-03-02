@@ -35,3 +35,8 @@ const string &Personne::getMail() const {
 void Personne::setMail(const string &mail) {
     Personne::mail = mail;
 }
+
+Personne::Personne(int id, const string &nom, const string &prenom, const string &mail) : id(id), Nom(nom),
+                                                                                          Prenom(prenom), mail(mail) {}
+
+Personne::Personne() {}
