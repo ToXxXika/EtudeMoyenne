@@ -15,6 +15,13 @@ public:
    string idMat;
     float Coef ;
    Enseignant Ens ;
+
+    const string &getIdMat() const;
+
+    float getCoef() const;
+
+    const string &getNomMat() const;
+
     string NomMat ;
 public:
     Matiere(const string &idMat, const string &nomMat, float coef, const Enseignant &ens);

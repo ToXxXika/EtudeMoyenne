@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "Note.h"
+#include "fstream"
 
 Note::Note(const Matiere &mat, const Etudiant &etu, float note, const string &type) : mat(mat), etu(etu), note(note),
                                                                                       type(type) {}
@@ -15,9 +16,11 @@ void Note::MoyenneMatiere(vector<Note> Ln) {
     }
    float moyenne =0;
     moyenne=Notes/Ln.size();
-    cout<<"La Moyenne de Cet Etudiant"<<Ln.begin()->etu.getNom()<<" "<<Ln.begin()->etu.getPrenom()<<" dans cette matiere"<<Ln.begin()->mat.NomMat<<" est"<<moyenne;
+    cout<<"Ajout du Moyenne dans la base de donnees"<<endl;
+      ofstream MyFile("C:\\Users\\mabro\\Desktop\\Moyenne.txt");
+      MyFile<<Ln.begin()->etu.getNumInsc()<<" "<<Ln.begin()->etu.getNom()<<" "<<Ln.begin()->etu.getPrenom()<<" "<<Ln.begin()->mat.getNomMat()<<" "<<moyenne<<endl;
+    cout<<"La Moyenne de Cet Etudiant "<<Ln.begin()->etu.getNom()<<" "<<Ln.begin()->etu.getPrenom()<<" dans cette matiere"<<Ln.begin()->mat.getNomMat()<<"est"<<moyenne;
 }
-//TODO: Ajouter le nombre de note (instead) of 3
 void Note::AjouterNote(vector<Matiere> M,int id,vector<Etudiant> LsEtd) {
      bool res =false;
      bool i  = true ;
@@ -34,7 +37,6 @@ void Note::AjouterNote(vector<Matiere> M,int id,vector<Etudiant> LsEtd) {
                         cin >> this->type;
                         cout << "Donner la Note du" << this->type << endl;
                         cin >> this->note;
-                        //TODO : Liste Etudiants
                         res= true ;
                     }
                 }
@@ -42,10 +44,7 @@ void Note::AjouterNote(vector<Matiere> M,int id,vector<Etudiant> LsEtd) {
                 cout<<"Etudiant non trouvable"<<endl ;
             }
         }
-
     }
-
-
 }
 
 Note::Note() {}

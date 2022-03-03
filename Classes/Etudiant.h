@@ -11,6 +11,10 @@ protected:
 public:
     Etudiant(int id, const string &nom, const string &prenom, const string &mail, int numInsc);
 
+    int getNumInsc() const;
+
+    void setNumInsc(int numInsc);
+
     void AjouterEtudiant();
     Etudiant();
 };

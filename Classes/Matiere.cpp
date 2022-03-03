@@ -41,3 +41,15 @@ void Matiere::AjouterMatiere(vector<Enseignant> LL) {
 }
 
 Matiere::Matiere() {}
+
+const string &Matiere::getIdMat() const {
+    return idMat;
+}
+
+float Matiere::getCoef() const {
+    return Coef;
+}
+
+const string &Matiere::getNomMat() const {
+    return NomMat;
+}

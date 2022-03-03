@@ -26,3 +26,11 @@ void Etudiant::AjouterEtudiant() {
     cout<<"Donner Num_Ins"<<endl;
     cin>>this->Num_insc;
 }
+
+int Etudiant::getNumInsc() const {
+    return Num_insc;
+}
+
+void Etudiant::setNumInsc(int numInsc) {
+    Num_insc = numInsc;
+}
