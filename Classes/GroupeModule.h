@@ -21,5 +21,5 @@ public:
     GroupeModule(const string &idGm, const string &nomGm, float coefGm, const vector<Matiere> &listeMat);
 
     GroupeModule();
-    void AjouterGroupeModule();
+    void AjouterGroupeModule(vector<Matiere> LstMat);
 };

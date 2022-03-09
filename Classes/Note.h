@@ -18,9 +18,15 @@
    string type ;
  public:
      Note(const Matiere &mat, const Etudiant &etu, float note, const string &type);
-  void MoyenneMatiere(vector<Note> Ln);
+  void MoyenneMatiere(vector<Note> Ln,ofstream & MyFile);
   void AjouterNote(vector<Matiere> M,int id,vector<Etudiant> LsEtd);
-  void MoyenneGM(Matiere M,GroupeModule GM);
+  void MoyenneGM(GroupeModule GM,int id,vector<Matiere> ListMat);
+  string getId(string line);
+  string getPren(string line);
+  string getMatiere(string line);
+  string getMoy(string line);
 
      Note();
+
+
  };

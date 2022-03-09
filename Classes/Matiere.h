@@ -11,16 +11,18 @@
 
 using namespace std ;
 class Matiere{
-public:
+protected:
    string idMat;
     float Coef ;
    Enseignant Ens ;
 
+public:
     const string &getIdMat() const;
 
     float getCoef() const;
 
     const string &getNomMat() const;
+
 
     string NomMat ;
 public:

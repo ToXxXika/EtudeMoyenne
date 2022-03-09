@@ -26,18 +26,11 @@ void Matiere::AjouterMatiere(vector<Enseignant> LL) {
                  cin>>this->NomMat;
                  cout<<"Donner Coefficient du Matiere "<<endl;
                  cin>>this->Coef;
-                 cout<<"*********** Ajout terminée **********"<<endl;
                  res = true;
                  break;
              }
          }
      }
-
-
-
-
-
-
 }
 
 Matiere::Matiere() {}
