@@ -5,6 +5,7 @@
 #ifndef ETUDEMOYENNE_ETUDIANT_H
 #define ETUDEMOYENNE_ETUDIANT_H
 #include "Personne.h"
+#include "vector"
 class Etudiant: public Personne{
 protected:
     int Num_insc ;
@@ -15,7 +16,9 @@ public:
 
     void setNumInsc(int numInsc);
 
+    void SupprimerEtudiant(vector<Etudiant>& ListEtd,int id);
     void AjouterEtudiant();
+    Etudiant GetEtudiantByList(vector<Etudiant>& ListEtd,int id);
     Etudiant();
 };
 #endif //ETUDEMOYENNE_ETUDIANT_H

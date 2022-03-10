@@ -14,7 +14,6 @@ public:
   static void CreateDb(const char* s);
     static int createTable(const char* s);
 };
-
 void Connection::CreateDb(const char *s) {
     sqlite3* DB ;
     int exit =0 ;

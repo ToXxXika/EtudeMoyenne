@@ -30,6 +30,7 @@ public:
 
     void AjouterMatiere(vector<Enseignant> LL);
 
+    int getCoefMatiere(vector<Matiere>,string M);
     Matiere();
 
 };

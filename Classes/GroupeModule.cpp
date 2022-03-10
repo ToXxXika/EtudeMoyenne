@@ -36,6 +36,5 @@ void GroupeModule::AjouterGroupeModule(vector<Matiere>LstMat) {
              }
          }
      }
-     cout<<"La coefficient de ce module est "<<this->CoefGM<<endl;
   this->ListeMat=ListMat;
 }

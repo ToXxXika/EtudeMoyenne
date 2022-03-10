@@ -34,3 +34,25 @@ int Etudiant::getNumInsc() const {
 void Etudiant::setNumInsc(int numInsc) {
     Num_insc = numInsc;
 }
+
+Etudiant Etudiant::GetEtudiantByList(vector<Etudiant> &ListEtd, int id) {
+    int i=0;
+    while(i<ListEtd.size()){
+        if(ListEtd.at(i).getId()==id){
+            return ListEtd.at(i);
+            break;
+        } else{
+            i++;
+        }
+    }
+
+}
+
+void Etudiant::SupprimerEtudiant(vector<Etudiant>& ListEtd, int id) {
+    for(int i=0;i<ListEtd.size();i++){
+        if(id==ListEtd.at(i).getId()){
+           ListEtd.erase(ListEtd.begin()+i);
+        }
+    }
+
+}
