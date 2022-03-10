@@ -17,14 +17,29 @@
    float note ;
    string type ;
  public:
+     struct GmEtudiant{
+         int IdEtd;
+         float MoyGM;
+         string NomGM ;
+         float coefGM ;
+         vector<string> MatNom;
+     };
      Note(const Matiere &mat, const Etudiant &etu, float note, const string &type);
-  void MoyenneMatiere(vector<Note> Ln,ofstream & MyFile);
-  void AjouterNote(vector<Matiere> M,int id,vector<Etudiant> LsEtd);
-  void MoyenneGM(GroupeModule GM,int id,vector<Matiere> ListMat);
+  void MoyenneMatiere(vector<Note> Ln,vector<Etudiant>& ListEtd,vector<Matiere>& ListMat,ofstream & MyFile);
+  void AjouterNote(Matiere M,int id,vector<Note>& ListNote,vector<Etudiant>& ListEtd);
+  void MoyenneGM(GroupeModule GM,int id,vector<Matiere> ListMat,vector<GmEtudiant>& ListCustom);
   string getId(string line);
   string getPren(string line);
   string getMatiere(string line);
   string getMoy(string line);
+
+     const Matiere &getMat() const;
+
+     const Etudiant &getEtu() const;
+
+     float getNote() const;
+
+     const string &getType() const;
 
      Note();
 

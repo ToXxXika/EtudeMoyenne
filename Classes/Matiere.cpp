@@ -16,7 +16,6 @@ void Matiere::AjouterMatiere(vector<Enseignant> LL) {
      while(i==res){
          cout<<"Donner le nom d'enseignant"<<endl;
          cin>>nomEns;
-         cout<<"Associer un Enseignant"<<endl;
          for (auto x: LL) {
              if (nomEns==x.getNom()) {
                  this->Ens = x;
@@ -45,4 +44,11 @@ float Matiere::getCoef() const {
 
 const string &Matiere::getNomMat() const {
     return NomMat;
+}
+
+int Matiere::getCoefMatiere(vector<Matiere> LsMat, string M) {
+    for(auto Mat:LsMat){
+        if(Mat.NomMat==M);
+        return Mat.Coef;
+    }
 }

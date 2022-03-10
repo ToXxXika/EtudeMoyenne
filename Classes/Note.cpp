@@ -9,54 +9,57 @@
 Note::Note(const Matiere &mat, const Etudiant &etu, float note, const string &type) : mat(mat), etu(etu), note(note),
                                                                                       type(type) {}
 
-void Note::MoyenneMatiere(vector<Note> Ln,ofstream & MyFile) {
-    float Notes =0 ;
-    for(auto x: Ln){
-        Notes+=x.note;
-    }
-   float moyenne =0;
-    moyenne=Notes/Ln.size();
-    cout<<"Ajout du Moyenne dans le fichier"<<endl;
-    cout<<Ln.begin()->mat.getNomMat()<<"Nom Matiere"<<endl;
-    MyFile << Ln.begin()->etu.getNumInsc()<<" "<<Ln.begin()->etu.getNom()<<" "<<Ln.begin()->etu.getPrenom()<<" "<<Ln.begin()->mat.getNomMat()<<" "<<Ln.begin()->mat.getCoef()<<" "<<moyenne<<endl;
-    cout<<"La Moyenne de Cet Etudiant "<<Ln.begin()->etu.getNom()<<" "<<Ln.begin()->etu.getPrenom()<<" dans cette matiere"<<Ln.begin()->mat.getNomMat()<<"est"<<moyenne;
-}
-void Note::AjouterNote(vector<Matiere> M,int id,vector<Etudiant> LsEtd) {
-     bool res =false;
-     bool i  = true ;
-     while (i!=res) {
-         cout<<"Donner le nom du la matiere"<<endl;
-         string nomMat ;
-         cin>>nomMat;
-        for(auto i: LsEtd){
-            cout<<"Etudiant getId \n"<<i.getId()<<endl;
-            cout<<"Etudiant id \n"<<id<<endl;
-            if(i.getId()==id){
-                this->etu=i;
-                for (auto x: M) {
-                    if (x.NomMat == nomMat) {
-                        this->mat=x;
-                        cout << "Donner le Type de note" << endl;
-                        cin >> this->type;
-                        cout << "Donner la Note du " << this->type << endl;
-                        cin >> this->note;
-                        res= true ;
-                    }else{
-                        cout<<"Matiere introuvable dans la base de données"<<endl;
-                    }
-                }
+void Note::MoyenneMatiere(vector<Note> Ln,vector<Etudiant>& ListEtd,vector<Matiere>& ListMat,ofstream & MyFile) {
+      int i=0;
+      int j;
+      int x=0;
+      float MoyMat=0;
+        while (i < ListEtd.size()) {
+            if (i == ListEtd.size()) {
                 break;
-            }else{
-                cout<<"Etudiant non trouvable"<<endl ;
+            } else {
+                while (x < ListMat.size()) {
+                    for (j = 0; j < Ln.size(); j++) {
+                        if ((ListMat.at(x).getNomMat() == Ln.at(j).getMat().getNomMat()) &&
+                            (ListEtd.at(i).getId() == Ln.at(j).etu.getId())) {
+                            MoyMat += Ln.at(j).note;
+                        }
+                    }
+                    float moyenne = 0;
+                    moyenne = MoyMat / ListMat.at(x).getCoef();
+                    MyFile << ListEtd.at(i).getId() << " " << ListEtd.at(i).getNom() << " " << ListEtd.at(i).getPrenom()
+                           << " " << moyenne << " " << ListMat.at(x).getNomMat() << endl;
+                    x++;
+                    MoyMat = 0;
+                    }
+                   x=0;
+                   i++;
+                }
             }
-        }
+
     }
+
+void Note::AjouterNote(Matiere M,int id,vector<Note>& ListNote,vector<Etudiant>& ListEtd) {
+      int InputNote =0;
+      Etudiant E ;
+                   cout<<"***Combien du notes vous allez associer a "<<M.getNomMat()<<endl;
+                   cin>>InputNote;
+                   for(int i=0;i<InputNote;i++){
+                       this->mat=M;
+                       cout << "Donner le Type de note" << endl;
+                       cin >> this->type;
+                       cout << "Donner la Note du " << this->type << endl;
+                       cin >> this->note;
+                       this->etu=E.GetEtudiantByList(ListEtd,id);
+                       ListNote.push_back(*this);
+                   }
 }
 
 Note::Note() {}
 
-void Note::MoyenneGM(GroupeModule GM, int id,vector<Matiere> ListMat) {
+void Note::MoyenneGM(GroupeModule GM, int id,vector<Matiere> ListMat,vector<GmEtudiant>& ListCustom) {
   ifstream newFile;
+    GmEtudiant GME ;
   newFile.open("C:\\Users\\mabro\\\\Desktop\\Moyenne.txt",ios::app);
   if(!newFile){
       cout<<"probleme dans le fichier"<<endl;
@@ -68,6 +71,7 @@ void Note::MoyenneGM(GroupeModule GM, int id,vector<Matiere> ListMat) {
           for(auto G:GM.ListeMat){
               //TODO: verification d'etudiants dans le fichier
               if((G.NomMat== getMatiere(data))&&(id==stoi(getId(data)))){
+                  GME.MatNom.push_back(G.NomMat);
                   for(int i=0;i<ListMat.size();i++){
                       if(ListMat.at(i).getNomMat()==G.NomMat){
                           Moy += stof(getMoy(data))*ListMat.at(i).getCoef();
@@ -75,10 +79,14 @@ void Note::MoyenneGM(GroupeModule GM, int id,vector<Matiere> ListMat) {
                   }
               }
           }
-          // coefficient du groupe module
-          Coef=GM.CoefGM;
-          cout<<"La Moyenne du groupe Module pour cet etudiant"<<Moy/Coef<<endl;
       }
+      GME.NomGM=GM.NomGM;
+      GME.IdEtd=id;
+      GME.coefGM=GM.CoefGM;
+      Coef=GM.CoefGM;
+      GME.MoyGM=Moy/Coef;
+      Etudiant E ;
+      ListCustom.insert(ListCustom.begin(),GME);
       newFile.close();
   }
 }
@@ -91,7 +99,6 @@ string Note::getId(string line) {
         i++;
         j++;
     }
-    cout<<res<<endl ;
     return res ;
 }
 
@@ -142,5 +149,21 @@ string Note::getMoy(string line) {
         }
     }
     return res;
+}
+
+const Matiere &Note::getMat() const {
+    return mat;
+}
+
+const Etudiant &Note::getEtu() const {
+    return etu;
+}
+
+float Note::getNote() const {
+    return note;
+}
+
+const string &Note::getType() const {
+    return type;
 }
 
