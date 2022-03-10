@@ -52,3 +52,11 @@ int Matiere::getCoefMatiere(vector<Matiere> LsMat, string M) {
         return Mat.Coef;
     }
 }
+
+void Matiere::SupprimerMatiere(vector<Matiere>& Lst, string nomMat) {
+   for(int i=0;i<Lst.size();i++){
+       if(Lst.at(i).NomMat==nomMat){
+           Lst.erase(Lst.begin()+i-1);
+       }
+   }
+}

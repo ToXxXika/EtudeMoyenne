@@ -4,7 +4,10 @@
 #include "Classes/Etudiant.h"
 #include "Classes/Note.h"
 #include "fstream"
+void Menu(){
+}
 int main() {
+
    vector<Etudiant> ListEtd;
    vector<Enseignant> ListEns;
    vector<Matiere> ListMat;
