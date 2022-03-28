@@ -32,7 +32,7 @@ public:
 
     int getCoefMatiere(vector<Matiere>,string M);
     Matiere();
-    void SupprimerMatiere(vector<Matiere>& LSt,string nomMat);
+    void SupprimerMatiere(vector<Matiere>& LSt,int nomMat);
 
 };
 #endif //ETUDEMOYENNE_MATIERE_H

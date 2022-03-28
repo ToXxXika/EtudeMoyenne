@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/EtudeMoyenne.dir/Classes/Enseignant.cpp.obj.d"
   "CMakeFiles/EtudeMoyenne.dir/Classes/Etudiant.cpp.obj"
   "CMakeFiles/EtudeMoyenne.dir/Classes/Etudiant.cpp.obj.d"
+  "CMakeFiles/EtudeMoyenne.dir/Classes/GroupeModule.cpp.obj"
+  "CMakeFiles/EtudeMoyenne.dir/Classes/GroupeModule.cpp.obj.d"
   "CMakeFiles/EtudeMoyenne.dir/Classes/Matiere.cpp.obj"
   "CMakeFiles/EtudeMoyenne.dir/Classes/Matiere.cpp.obj.d"
   "CMakeFiles/EtudeMoyenne.dir/Classes/Note.cpp.obj"

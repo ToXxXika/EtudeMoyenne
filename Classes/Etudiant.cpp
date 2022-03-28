@@ -50,9 +50,32 @@ Etudiant Etudiant::GetEtudiantByList(vector<Etudiant> &ListEtd, int id) {
 
 void Etudiant::SupprimerEtudiant(vector<Etudiant>& ListEtd, int id) {
     for(int i=0;i<ListEtd.size();i++){
+        cout<<"ListEtd :"<<ListEtd.at(i).getId();
         if(id==ListEtd.at(i).getId()){
            ListEtd.erase(ListEtd.begin()+i);
+           cout<<"Etudiant supprimé de la liste"<<endl ;
         }
     }
 
+}
+
+void Etudiant::ModifierEtudiant(vector<Etudiant> &ListEtd, int id) {
+      for(auto x : ListEtd){
+          if(id==x.getId()){
+              cout<<"Etudiant trouvé"<<endl ;
+              string mail ;
+              string prenom ;
+              string nom ;
+              cout<<"Donner nouveau Mail"<<endl;
+              cin>>mail ;
+              cout<<"Donner nouveau prenom"<<endl;
+              cin>>prenom;
+              cout<<"Donner nouveau nom"<<endl;
+              cin>>nom ;
+              x.setMail(mail);
+              x.setNom(nom);
+              x.setPrenom(prenom);
+              cout<<"Mise a jour terminee"<<endl ;
+          }
+      }
 }

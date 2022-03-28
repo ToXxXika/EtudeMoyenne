@@ -167,3 +167,17 @@ const string &Note::getType() const {
     return type;
 }
 
+float Note::MoyenneGenerale(vector<GmEtudiant> &LsGM, int id) {
+      float  res ;
+      int sommecoef ;
+      float moyGM ;
+      for(auto x : LsGM){
+          if(x.IdEtd==id){
+              sommecoef+=x.coefGM;
+               moyGM += x.coefGM*x.MoyGM;
+          }
+      }
+      res = moyGM/sommecoef ;
+      return res ;
+}
+

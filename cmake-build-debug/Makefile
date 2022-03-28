@@ -176,6 +176,30 @@ Classes/Etudiant.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EtudeMoyenne.dir\build.make CMakeFiles/EtudeMoyenne.dir/Classes/Etudiant.cpp.s
 .PHONY : Classes/Etudiant.cpp.s
 
+Classes/GroupeModule.obj: Classes/GroupeModule.cpp.obj
+.PHONY : Classes/GroupeModule.obj
+
+# target to build an object file
+Classes/GroupeModule.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EtudeMoyenne.dir\build.make CMakeFiles/EtudeMoyenne.dir/Classes/GroupeModule.cpp.obj
+.PHONY : Classes/GroupeModule.cpp.obj
+
+Classes/GroupeModule.i: Classes/GroupeModule.cpp.i
+.PHONY : Classes/GroupeModule.i
+
+# target to preprocess a source file
+Classes/GroupeModule.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EtudeMoyenne.dir\build.make CMakeFiles/EtudeMoyenne.dir/Classes/GroupeModule.cpp.i
+.PHONY : Classes/GroupeModule.cpp.i
+
+Classes/GroupeModule.s: Classes/GroupeModule.cpp.s
+.PHONY : Classes/GroupeModule.s
+
+# target to generate assembly for a file
+Classes/GroupeModule.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EtudeMoyenne.dir\build.make CMakeFiles/EtudeMoyenne.dir/Classes/GroupeModule.cpp.s
+.PHONY : Classes/GroupeModule.cpp.s
+
 Classes/Matiere.obj: Classes/Matiere.cpp.obj
 .PHONY : Classes/Matiere.obj
 
@@ -287,6 +311,9 @@ help:
 	@echo ... Classes/Etudiant.obj
 	@echo ... Classes/Etudiant.i
 	@echo ... Classes/Etudiant.s
+	@echo ... Classes/GroupeModule.obj
+	@echo ... Classes/GroupeModule.i
+	@echo ... Classes/GroupeModule.s
 	@echo ... Classes/Matiere.obj
 	@echo ... Classes/Matiere.i
 	@echo ... Classes/Matiere.s

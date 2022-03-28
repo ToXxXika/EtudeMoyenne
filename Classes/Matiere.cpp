@@ -53,9 +53,9 @@ int Matiere::getCoefMatiere(vector<Matiere> LsMat, string M) {
     }
 }
 
-void Matiere::SupprimerMatiere(vector<Matiere>& Lst, string nomMat) {
+void Matiere::SupprimerMatiere(vector<Matiere>& Lst, int nomMat) {
    for(int i=0;i<Lst.size();i++){
-       if(Lst.at(i).NomMat==nomMat){
+       if(stoi(Lst.at(i).idMat)==nomMat){
            Lst.erase(Lst.begin()+i-1);
        }
    }

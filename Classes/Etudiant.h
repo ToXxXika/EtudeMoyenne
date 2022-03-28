@@ -19,6 +19,7 @@ public:
     void SupprimerEtudiant(vector<Etudiant>& ListEtd,int id);
     void AjouterEtudiant();
     Etudiant GetEtudiantByList(vector<Etudiant>& ListEtd,int id);
+    void ModifierEtudiant(vector<Etudiant>& ListEtd,int id);
     Etudiant();
 };
 #endif //ETUDEMOYENNE_ETUDIANT_H

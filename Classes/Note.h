@@ -28,6 +28,7 @@
   void MoyenneMatiere(vector<Note> Ln,vector<Etudiant>& ListEtd,vector<Matiere>& ListMat,ofstream & MyFile);
   void AjouterNote(Matiere M,int id,vector<Note>& ListNote,vector<Etudiant>& ListEtd);
   void MoyenneGM(GroupeModule GM,int id,vector<Matiere> ListMat,vector<GmEtudiant>& ListCustom);
+  float MoyenneGenerale(vector<GmEtudiant>& LsGM,int id);
   string getId(string line);
   string getPren(string line);
   string getMatiere(string line);

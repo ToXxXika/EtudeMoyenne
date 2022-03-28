@@ -26,3 +26,15 @@ void Enseignant::AjouterEnseignant() {
     cin>>this->CNSS;
 
 }
+
+void Enseignant::SupprimerEnseignant(vector<Enseignant> &ListEns, int cnss) {
+          for(int i=0;i<ListEns.size();i++){
+              if(ListEns.at(i).getCnss()==cnss){
+                  ListEns.erase(ListEns.begin()+i);
+              }
+          }
+}
+
+int Enseignant::getCnss() const {
+    return CNSS;
+}

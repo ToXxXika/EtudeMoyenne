@@ -95,6 +95,12 @@
 		<Unit filename="C:/Users/mabro/CLionProjects/EtudeMoyenne/Classes/Etudiant.h">
 			<Option target="EtudeMoyenne"/>
 		</Unit>
+		<Unit filename="C:/Users/mabro/CLionProjects/EtudeMoyenne/Classes/GroupeModule.cpp">
+			<Option target="EtudeMoyenne"/>
+		</Unit>
+		<Unit filename="C:/Users/mabro/CLionProjects/EtudeMoyenne/Classes/GroupeModule.h">
+			<Option target="EtudeMoyenne"/>
+		</Unit>
 		<Unit filename="C:/Users/mabro/CLionProjects/EtudeMoyenne/Classes/Matiere.cpp">
 			<Option target="EtudeMoyenne"/>
 		</Unit>
